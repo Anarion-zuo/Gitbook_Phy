@@ -68,7 +68,7 @@ $$
 $$
 The former term can be considered as the velocity of $B$ with respect to the frame, or the velocity of $B$ without the frame.
 
-## Motion of Center of Mass
+## Change of Frame
 
 Steps of solving a motion:
 
