@@ -68,9 +68,26 @@ The way of adding heat to the system, keeping volume or pressure constant. Each 
 $$
 C_V=\frac{dQ_V}{dT}=\frac{dE+pdV}{dT}=(\frac{\partial E}{\partial T})_V,C_p=\frac{dQ_p}{dT}=\frac{dE+pdV_p}{dT}=(\frac{\partial E}{\partial T})_p+(\frac{\partial V}{\partial T})_p
 $$
-The experiment of observation is the ideal gas expansion experiment. The experiment shows that with no external work done upon the system and no heat exchange allowed, the temperature of the system does not change, no matter how the pressure and volume of the system may change. Therefore, the internal energy of the system is a function to temperature.
+The experiment of observation is the ideal gas expansion experiment. The experiment shows that with no external work done upon the system and no heat exchange allowed, the temperature of the system does not change, no matter how the pressure and volume of the system may change. Therefore, the internal energy of the system is a function with respect to temperature.
 
 By the definition of temperature, $pV\propto T$. If we look at the difference between the process of keeping volume or pressure constant:
 $$
 C_p-C_V=\frac{pV}{T}\propto N
 $$
+
+#### Second Law
+
+As we have known that there is: $dW=\sum_iJ_idx_i$, there must be some formula of similar form for $Q$.
+
+No process is possible whose so result is to complete conversion from heat to work. There is no ideal engine.
+
+Clausius’s Theorem:
+
+- For any cyclic process, the following is always true at any moment:
+
+$$
+\oint\frac{dQ(s)}{T(s)}\le0
+$$
+
+where $dQ$ is the amount of heat flowing into the system at the moment of temperature $T(s)$ and $s$ represents some state. A cyclic process is a process in which many things may change and in the end comes back to the original state.
+

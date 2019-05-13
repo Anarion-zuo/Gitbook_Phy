@@ -409,3 +409,39 @@ The off diagonal angular momentum terms results in a unbalanced system.
 
 ### Rigid
 
+1. Consider bodies that rotate about center of mass on fixed points.
+2. Use reference frames attached to bodies.
+
+![1557714244186](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557714244186.png)
+
+For a single point of mass:
+$$
+h_{i/A}=R_{i/A}\times P_{i/O}=(x_i\hat i+z_i\hat k)\times m_ix_iw_z\hat j=m_ix_i^2w_z\hat k-m_ix_iz_iw_z\hat i\\
+\frac{d}{dt}h_{i/A}=\tau
+$$
+For a whole body:
+$$
+H_{/A}=\sum_iR_{i/A}\times P_{i/A}=\sum_im_iR_{i/A}\times(w_{/O}\times R_{i/A})
+$$
+For the inertial matrixL
+$$
+I_{xz}=-\sum_im_ix_iz_i,I_{zz}=\sum_im_i(x_i^2+y_i^2)
+$$
+In general:
+$$
+I_{\alpha\beta}=(-1)^{I(\alpha=\beta)+1}\sum_im_i\alpha_i\beta_i
+$$
+For every rigid body, we can find a set of coordinate at a certain point such that the inertial matrix is diagonal. When we rotate the body accordingly, the body would rotate in balanced state, having no components of angular momentum outside the rotating axis. The axis is the principal axis.
+
+1. If there is an axis of symmetry, the axis is a principal axis.
+2. If there is 1 plane of symmetry, there is a principal axis perpendicular to it. It may pass the center of mass $G$, but not only be it.
+3. If there is 2 orthogonal planes of symmetry, their intersection is a principal axis.
+
+The axis we find may not cross the center of mass, for dynamical balance is not statical balance. The definition of dynamical balance of a rigid body is that there is no torque generated in the perpendicular direction of the rotating axis while rotating at any time, any rate, while it may have a unbalanced centripetal force.
+
+### Not the Center of Mass
+
+Parallel axis:
+$$
+I_{zz/A}=I_{zz/G}+Md^2
+$$
