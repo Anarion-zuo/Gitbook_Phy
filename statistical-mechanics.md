@@ -91,3 +91,142 @@ $$
 
 where $dQ$ is the amount of heat flowing into the system at the moment of temperature $T(s)$ and $s$ represents some state. A cyclic process is a process in which many things may change and in the end comes back to the original state.
 
+### Carnot Engine
+
+A Carnot engine is any engine that is
+
+1. Reversible: Can go forward/backward by reversing input/output.
+2. Operating in cycle: Start and end points are the same.
+3. All heat input/output at 2 temperatures: Defined at 2 different temperature layer $T_H,T_C$.
+
+![1557921893322](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557921893322.png)
+
+#### Ideal Gas Carnot Cycle
+
+![1557922053282](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557922053282.png)
+
+$BC\&DA$ is a adiabatic path without any exchange of heat and quasi-static. There is $dE=dW=pdV$. We may have:
+$$
+pV^\gamma=const
+$$
+There is a theorem saying that Of all engines operating only between temperature $T_H,T_C$, the Carnot engine is the most sufficient. The proof is as following.
+
+![1557922543475](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557922543475.png)
+
+Suppose there is another engine better than Carnot’s. Connect is with another Carnot engine working backward between $T_H$ and $T_C$, transferring work of $W$. The input and output are as $Q_H'-Q_H$ and $Q_C'-Q_C$. According to the second law, we have $Q_H'>Q_H$, for the temperature of $T_H$ is higher. Therefore:
+$$
+\eta_{non-C}\frac{W}{Q_H'}\le\frac{W}{Q_H}=\eta_{C}
+$$
+The efficiency of any other engine is less that or equal to the efficiency of Carnot engine.
+
+By the same idea, we can also find that All Carnot engines operating between $T_H,T_C$ have the same efficiency. We can let one Carnot engine work on anther and do it backward and have a pair of inequalities which leads to an equality. Therefore, for a pair of given $T_H,T_C$, we can have a certain value of the efficiency.
+$$
+\eta_{C}=\eta(T_H,T_C)
+$$
+We hereby give the thermal dynamic’s temperature scale.
+
+#### Some Properties of Thermal Dynamic’s Scale
+
+We put together 2 Carnot’s engine, doing work $W_{12},W_{23}$.
+
+![1557924474825](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557924474825.png)
+
+The whole thing is equivalent to another Carnot engine, doing work $W_{13}$.
+
+![1557924558308](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557924558308.png)
+
+For engine 1:
+$$
+Q_2=Q_1-W_{12}=Q_1(1-\eta(T_1,T_2))
+$$
+For engine 2:
+$$
+Q_3=Q_2-W_{23}=Q_2(1-\eta(T_2,T_3))=Q_1(1-\eta(T_1,T_2))(1-\eta(T_2,T_3))
+$$
+For the engine combined:
+$$
+Q_3=Q_1-W_{13}=Q_1(1-\eta(T-1,T_3))
+$$
+Conclusion:
+$$
+1-\eta(T_1,T_3)=(1-\eta(T_1,T_2))(1-\eta(T_2,T_3))
+$$
+By definition:
+$$
+1-\eta(T_1,T_2)=\frac{1-\eta(T_1,T_3)}{1-\eta(T_2,T_3)}=\frac{Q_2}{Q_1}
+$$
+The thermal dynamic scale is defined to be:
+$$
+\frac{Q_2}{Q_1}=\frac{T_2}{T_1}
+$$
+This defines the ratio, therefore still requires a reference state.
+
+For any engine:
+$$
+\eta=1-\frac{Q_C}{Q_H}\le\eta_{CE}(T_H,T_C)=1-\frac{T_C}{T_H}\Rightarrow \frac{Q_H}{T_H}+\frac{-Q_C}{T_C}\le0
+$$
+
+#### Clausius’ Theorem
+
+For any cyclic process, 
+
+![1557925929084](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557925929084.png)
+
+the heat goes into the system at a certain state $Q_{(s)}$, there is:
+$$
+\oint\frac{dQ(s)}{T(s)}\le0
+$$
+which is a general case of the formula above. $Q(s)$ is the heat delivered to the system at temperature $T_{(s)}$.
+
+![1557926658439](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557926658439.png)
+
+Take a Carnot engine extracting heat from some substance with constant temperature $T_0$ and deliver the output heat to the cyclic system.When we are putting heat into the cycle, the temperature of our substance may not be the same as the temperature it holds at the heat source. Therefore, we consider this intermediate process for the convenience of describing the process of transferring heat.
+
+The heat extracted from the source at a cycle is:
+$$
+\oint dQ_0(s)=\oint T_0dQ(s)/T(s)\le0\Rightarrow\oint\frac{dQ(s)}{T(s)}\le0
+$$
+for $dQ_0(s)\le0$, or we can get some heat out of some bath and set out a car.
+
+#### Reversible Processes
+
+A reversible process is a process with each state equilibrium. We demand the Carnot engine to deliver the temperature precisely at each of the tiny states of the cyclic reversible process, which for each of them is equilibrium.
+
+![1557927262192](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557927262192.png)
+
+Solid line for equilibrium/reversible.
+
+According to Clausius’ theorem, we must have the less-or-equal-to-0 inequality for both directions of the cycle. Therefore, in the case of reversible process,
+$$
+\oint\frac{dQ(s)}{T(s)}=0
+$$
+
+##### Path Independence
+
+![1557927662483](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557927662483.png)
+
+For any 2 points A and B,
+$$
+\int_A^B\frac{dQ^{(1)}_{rev}}{T^{(1)}}=\int_A^B\frac{dQ^{(2)}_{rev}}{T^{(2)}}
+$$
+The different paths of integral ultimately have the same result. An it should be the same for any other path between the 2 points. The result only depends on the initial and final state, which is the definition of entropy.
+$$
+\int_A^B\frac{dQ^{(i)}_{rev}}{T^{(i)}}=S(B)-S(A)
+$$
+
+##### Energy
+
+For a reversible transformation,
+$$
+dQ=TdS,dE=\sum_iJ_idx_i+TdS
+$$
+For $n$ ways doing work to the system, $dW=\sum_i^nJ_idx_i$, there is $(n+1)$ independent variables describing the system, $J_1,...,J_n,T$.
+
+Rearrange the expression and have the definition of entropy:
+$$
+dS=\frac{dE}{T}-\frac{\sum_iJ_i}{T}dx_i\Rightarrow S(E,x),\frac{1}{T}=\frac{\partial S}{\partial E}|_{x},\frac{J_i}{T}=-\frac{\partial S}{\partial x_i}|_{E,x_{j\ne i}}
+$$
+All other factors are given by the derivatives of $E$ and $x$.
+
+#### Irreversible Transformation
+
