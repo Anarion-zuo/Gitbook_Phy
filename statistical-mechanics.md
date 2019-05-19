@@ -313,6 +313,12 @@ $$
 dE=TdS+\sum_iJ_idx_i+\sum_\alpha\mu_\alpha dN_\alpha
 $$
 
+Other fashions:
+$$
+dS(E,x,N)=\frac{dE}{T}-\frac{J_idx_i}{T}-\frac{\mu_\alpha dN_\alpha}{T},d(T-TS)=-SdT+J_idx_i+\mu_\alpha dN_\alpha
+$$
+
+
 #### Grand Potential
 
 $$
@@ -346,4 +352,149 @@ $$
 For ideal gas:
 $$
 d\mu=\frac{k_BT}{p}dp,\mu(T,p)=\mu_0+k_BT\ln p
+$$
+
+#### Maxwell Relation
+
+A property of a function of state:
+$$
+\frac{\partial^2f}{\partial x\partial y}=\frac{\partial^2f}{\partial y\partial x}
+$$
+For systems with fixed number of particles, $dN=0$:
+$$
+dE=TdS+J_idx_i,T=\frac{\partial E}{\partial S}|_x,J_i=\frac{\partial E}{\partial x_i}|_{S,x_i\ne x_j}
+$$
+then:
+$$
+\frac{\partial T}{\partial x_i}|_S=\frac{\partial J_i}{\partial S}|_x,\frac{\partial x_i}{\partial T}|_S=\frac{\partial S}{\partial J_i}|_x
+$$
+This provides a way of solving problems of such kind as compute $\frac{\partial S}{\partial J_i}|_T$. We construct the function into a form such that $S$ is the first derivative of some function of state. By observation:
+$$
+d(E-TS-J_ix_i)=TdS+J_idx_i-TdS-SdT-J_idx_i-x_idJ_i=-SdT-x_idJ_i
+$$
+According to Maxwell relation:
+$$
+\frac{\partial S}{\partial J_i}|_T=\frac{\partial x_i}{\partial T}|_J
+$$
+
+### Stability Conditions
+
+For the case of any system, thermal or mechanical, we defined a function $H$ for it, representing energy:
+$$
+H=\phi(x)-Jx
+$$
+The optimization solution is:
+$$
+J=\frac{\partial \phi}{\partial x}
+$$
+If the shape of the potential energy is given, which is convex:
+$$
+\frac{\partial^2\phi}{\partial x^2}>0
+$$
+If $x$ is a vector, or we have multiple variables here, the Hessian matrix of $H$ is positive definite.
+$$
+\sum_{i,j}\frac{\partial^2\phi}{\partial x_i\partial x_j}\delta x_i\delta x_j\ge0
+$$
+When the force is known:
+$$
+J_i=\frac{\partial \phi}{\partial x_i}
+$$
+If there is some change in $J$:
+$$
+\delta J_i=\sum_j\frac{\partial^2\phi}{\partial x_i\partial x_j}\delta x_j
+$$
+Therefore, for any force, the work:
+$$
+\sum_i\delta x_i\delta J_i\ge0
+$$
+Apply the same idea to thermal systems. In order to have the system at equilibrium, there has to be:
+$$
+\delta T\delta S+\sum_i\delta J_i\delta x_i+\sum_\alpha\delta\mu_\alpha\delta N_\alpha\ge0
+$$
+
+#### Entropy Inequality
+
+$$
+dE=TdS+\sum_iJ_idx_i
+$$
+
+Stability condition:
+$$
+\delta T\delta S+\sum_i\delta J_i\delta x_i\ge0
+$$
+Change in emtropy:
+$$
+\delta S=\frac{\partial S}{\partial T}|_x\delta T+\sum_{i,j}\frac{\partial S}{\partial x_i}|_{T,x_i\ne x_j}\delta x_i
+$$
+Plug in:
+$$
+\frac{\partial S}{\partial T}|_x(\delta T)^2+\sum_i(\delta T)(\delta x_i)(\frac{\partial S}{\partial x_i}|_T+\frac{\partial J_i}{\partial T}|_x)+\sum_{i,j}\delta x_i\delta x_j\frac{\partial J_i}{\partial x_j}|_T\ge0
+$$
+Maxwell relation:
+$$
+d(E-TS)=-SdT+\sum_iJ_idx_i\Rightarrow\frac{\partial(-S)}{\partial x_i}|_T=\sum_i\frac{\partial J_i}{\partial T}|_x
+$$
+Plug in:
+$$
+\frac{\partial S}{\partial T}|_x(\delta T)^2+\sum_{i,j}\delta x_i\delta x_j\frac{\partial J_i}{\partial x_j}|_T\ge0
+$$
+Fixed $x_i$:
+$$
+\frac{\partial S}{\partial T}|_{x}\ge0
+$$
+Entropy should always be an increasing function of temperature at constant displacement. The heat capacity at constant displacement is also be positive.
+$$
+C_x=\frac{dQ_x}{dT}=T\frac{\partial S}{\partial T}|_x\ge0
+$$
+Fixed temperature:
+$$
+\sum_{i,j}\frac{\partial J_i}{\partial x_j}|_T\delta x_i\delta x_j\ge0
+$$
+Matrix form:
+$$
+\begin{pmatrix}\delta x_1&\delta x_2&...\end{pmatrix}\begin{pmatrix}
+\frac{\partial J_i}{\partial x_j}
+\end{pmatrix}\begin{pmatrix}\delta x_1\\\delta x_2\\\vdots\end{pmatrix}
+$$
+The matrix must be positive definite.
+
+### The Third Law
+
+For 2 different states represented by $x_1, x_2$, if we go along some reversible process, we would have some measurement of emtropy:
+$$
+\int_{x_1}^{x_2}\frac{dQ_{rev}|_T}{T}=S(x_2,T)-S(x_1,T)
+$$
+The observation of Nernst is that, as temperature gets lower, the difference in entropy between the 2 states goes to 0.
+$$
+\lim_{T\rightarrow0}\Delta_{x_1\rightarrow x_2}S(T)=0
+$$
+This leads to a more ambitious statement of the third law, which is the entropy of all substance at 0 temperature is the same universal constant, set to 0.
+
+#### Mathematical Consequences
+
+$$
+\lim_{T\rightarrow0}S(X,T)=0,\lim_{T\rightarrow0}\frac{\partial S}{\partial X}|_T=0
+$$
+
+Extensibility:
+$$
+\alpha=\frac{1}{x}\frac{\partial x}{\partial T}|_J=\frac{1}{x}\frac{\partial S}{\partial J}|_T,\lim_{T\rightarrow0}\alpha=0
+$$
+Heat capacity:
+$$
+S(T,X)-S(0,X)=\int_0^T\frac{C_x^{(T)}dT}T
+$$
+As $T$ approaches 0, the heat capacity has to go to 0, for the integral has to be convergent.
+
+## Probability
+
+### Gaussian
+
+Single variable:
+$$
+p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp(-\frac{(x-\lambda)^2}{2\sigma^2})
+$$
+Characteristic function:
+$$
+\tilde p(k)=\exp(-ik\lambda-\frac{1}{2}k^2\sigma^2)\int\frac{dz}{\sqrt{2\pi\sigma^2}}\exp(-\frac{z^2}{2\sigma^2}),z=x-\lambda+ik\sigma^2
 $$
