@@ -176,11 +176,11 @@ the heat goes into the system at a certain state $Q_{(s)}$, there is:
 $$
 \oint\frac{dQ(s)}{T(s)}\le0
 $$
-which is a general case of the formula above. $Q(s)$ is the heat delivered to the system at temperature $T_{(s)}$.
+which is a general case of the formula above. $Q(s)$ is the heat delivered to the system at temperature $T(s)$.
 
 ![1557926658439](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557926658439.png)
 
-Take a Carnot engine extracting heat from some substance with constant temperature $T_0$ and deliver the output heat to the cyclic system.When we are putting heat into the cycle, the temperature of our substance may not be the same as the temperature it holds at the heat source. Therefore, we consider this intermediate process for the convenience of describing the process of transferring heat.
+Take a Carnot engine extracting heat from some substance with constant temperature $T_0$ and deliver the output heat to the cyclic system. When we are putting heat into the cycle, the temperature of our substance may not be the same as the temperature it holds at the heat source. Therefore, we consider this intermediate process for the convenience of describing the process of transferring heat.
 
 The heat extracted from the source at a cycle is:
 $$

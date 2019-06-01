@@ -1,3 +1,7 @@
+
+
+
+
 # Engineering Dynamics
 
 ## Introduction
@@ -444,4 +448,168 @@ The axis we find may not cross the center of mass, for dynamical balance is not 
 Parallel axis:
 $$
 I_{zz/A}=I_{zz/G}+Md^2
+$$
+
+## Vibration
+
+### Single Degree Freedom System
+
+#### No External Influence
+
+Some differential equations may be set up like this:
+$$
+M\ddot x+kx=Mg
+$$
+where the right hand side is not 0 but a constant. The result of this is still single degree of freedom, only in another form. It can be transformed into homogeneous form.
+
+Solve for $\ddot x=0$:
+$$
+x_s=\frac{Mg}{k}
+$$
+The solution to the original equation can be written as:
+$$
+x=x_s+x_d(t)
+$$
+Therefore, the derivatives:
+$$
+\dot x=\dot x_d,\ddot x=\ddot x_d
+$$
+The original equation is equivalent to:
+$$
+M\ddot x_d+kx_d=0,w_n=\sqrt{\frac{k}{m}}
+$$
+A system without external influence is always vibrating with a single triangular term, depending on initial conditions. The natural frequency or undamped frequency is independent of the initial state.
+
+Suppose any vibration can be represented in the form of:
+$$
+x(t)=A_1\cos wt+B_1\sin wt=A\cos(w_nt-\phi)=Real(A\exp(i(wt-\phi)),A=\sqrt{x_0^2+(\frac{v_0}{w_n})^2},\phi=\arctan\frac{v_0}{x_0w_n}
+$$
+One of the choices of the independent variables is:
+$$
+A_1=x_0,B_1=\frac{v_0}{w_n}
+$$
+
+#### Homogeneous Case
+
+$$
+M\ddot x+b\dot x+Kx=F(t)
+$$
+
+The natural frequency is:
+$$
+w_n=\sqrt{\frac{K}{M}}
+$$
+For $b=0,F(t)=0$, the solution is known.
+
+For $F(t)=0$:
+$$
+M\ddot x+b\dot x+Kx=0,s^2+\frac{b}{M}s+\frac{K}{M}=0,x=Ae^{st}
+$$
+Roots in engineers’ form:
+$$
+s_{1,2}=-\frac{b}{2M}\pm\sqrt{\frac{b^2}{4M^2}-\frac{K}{M}}=-(\frac{b}{2Mw_n})w_n\pm w_n\sqrt{(\frac{b}{2w_nM})^2-1}=-\zeta w_n\pm w_n\sqrt{\zeta^2-1}
+$$
+where the damping ratio:
+$$
+\zeta=\frac{b}{2w_nM}
+$$
+For $\zeta<1$,
+$$
+\begin{align*}
+&x(t)=Ae^{-\zeta w_nt}\cos(w_dt-\phi)\\
+=&(\frac{x_0}{\sqrt{1-\zeta^2}}\cos(w_dt-\psi)+\frac{v_0}{w_d}\sin(w_dt)e^{-\zeta w_nt}\\
+=&(x_0\cos w_dt+\frac{v_0+\zeta w_nx_0}{w_d}\sin w_dt)e^{-\zeta w_nt}\\\rightarrow&
+(x_0\cos w_dt+\frac{v_0}{w_d}\sin w_dt)e^{-\zeta w_nt}
+\end{align*}
+,w_d=w_n\sqrt{1-\zeta^2}
+$$
+where $w_d$ is the damped natural frequency. For little damped vibration, we have approximately same $w$s.
+
+Suppose the damped period is $\tau_d$:
+$$
+\ln\frac{x(t)}{x(x+n\tau_d)}=\zeta w_nn\tau_d=2\pi n\frac{\zeta}{\sqrt{1-\zeta^2}}\rightarrow2\pi n\zeta
+$$
+
+#### Steady State
+
+$$
+F(t)\ne0,F(t)=F_0\cos wt
+$$
+
+The system would oscillate in a strange manner and finally get closer and closer to the input of the system.
+$$
+M\ddot x+C\dot x+Kx=F_0\cos wt
+$$
+
+From a engineer’s perspective, we try to plug in some potential answer to the equation and see the result. The known conclusion is in a linear system, such as a damped spring, the frequency of the static response is always identical to the frequency of the input.
+
+Suppose:
+$$
+x_{s.s.}=x_0\cos(wt-\phi),\dot x_{s.s}=-x_0w\sin(wt-\phi),\ddot x_{s.s.}=-x_0w^2\cos(wt-\phi)
+$$
+Plug in:
+$$
+x_0=\frac{F_0/K}{\sqrt{(1-w^2/w_n^2)^2+(2\zeta w/w_n)^2}},\phi=\arctan\frac{2\zeta w/w_n}{1-w^2/w_n^2}
+$$
+Define dynamic amplitude:
+$$
+H(w)=((1-\frac{w^2}{w_n^2})+(2\zeta\frac{w^2}{w_n^2}))^{-1/2}
+$$
+The static solution can be represented as:
+$$
+x(t)=\frac{|F_0|}{K}|H(w)|\cos(wt-\phi)
+$$
+
+where $H$ is the transfer function.
+
+#### Complex Numbers Solution
+
+Euler’s Formula:
+$$
+e^{i\theta}=\cos\theta+i\sin\theta
+$$
+Exponential form of any complex number:
+$$
+a+bi=ce^{i\theta},c^2=a^2+b^2,\tan\theta=\frac{b}{a}
+$$
+Complex form of the input and output:
+$$
+F(t)=Re[F_0e^{iwt}],x_0\cos(wt-\phi)=Re(x_0e^{i(wt-\phi)})=Re(x_0e^{-i\phi}e^{iwt})=Re(Xe^{iwt})
+$$
+Plug the input into the equation of motion:
+$$
+(-w^2M+iwc+K)X=F_0,H_{X/F}(w)=\frac{X}{F_0}=\frac{1}{-Mw^2+iwc+K}=\frac{1}{K[1-w^2/w_n^2+2i\zeta w/w_n]}
+$$
+Take the real part and the result is the same as before.
+$$
+x(t)=|F_0||H_{x/F}|Re(\exp(i(wt-\phi)))=before
+$$
+
+#### Isolation
+
+![1559318851690](../../../../.config/Typora/typora-user-images/1559318851690.png)
+
+The object is vibrating upon a vibrating table. The equation of motion is:
+$$
+M\ddot x+c\dot x+Kx=Ky+c\dot y,y(t)=y_oe^{iwt}
+$$
+The transfer function is:
+$$
+\frac{X}{y_0}=H_{x/y}(w)=|H_{x/y}|e^{-i\phi}=\sqrt\frac{1+(2\zeta w/w_n)^2}{(1-w^2/w_n^2)^2+(2\zeta w/w_n)^2}e^{-i\phi},\tan\phi=\frac{2\zeta(w/w_n)^3}{1+(4\zeta^2-1)(w/w_n)^2}
+$$
+The phase is a little messy, and matters little.
+
+This case illustrates how the motion of the table effects the motion of the object. The next case would be vise-versa:
+
+![1559320260040](../../../../.config/Typora/typora-user-images/1559320260040.png)
+
+The assumption is to make sure that the motion of the object is not generally effected by the motion of the table.
+
+The equation of motion is:
+$$
+Kx+c\dot x=[K+iwc]Xe^{iwt},\frac{F_T}{F_0}=[K+iwc]\frac{x}{F_0}
+$$
+where $F_T$ is the force upon the table, and $F_0$ is the force upon the object, which are also called the force transmitted and the force out. The transfer function is:
+$$
+|H_{F_T/F_0}|=|H_{x/y}|
 $$
