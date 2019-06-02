@@ -93,17 +93,36 @@ where $dQ$ is the amount of heat flowing into the system at the moment of temper
 
 ### Carnot Engine
 
+#### Engines
+
+An engine is a machine with a certain process that try to transfer from heat to work as much as possible. The efficiency of an engine is defined to be the comparison between the work extracted and the heat consumed.
+
+![1559390290507](../../../../.config/Typora/typora-user-images/1559390290507.png)
+$$
+\eta=\frac{W}{Q_H}=1-\frac{Q_C}{Q_H}\le1
+$$
+where $H,C$ signifies hot and cold.
+
+A refrigerator operates reversibly, taking a certain amount of work and trying to reduce heat in a certain system. The performance (not efficiency) of a refrigerator is defined to be the comparison between the input heat and the work done.
+
+![1559390706926](../../../../.config/Typora/typora-user-images/1559390706926.png)
+$$
+\omega=\frac{Q_C}{W}=\frac{Q_C}{Q_H-Q_C}
+$$
+
+#### Definition
+
 A Carnot engine is any engine that is
 
-1. Reversible: Can go forward/backward by reversing input/output.
+1. Reversible: Can go forward/backward by reversing input/output. (Frictionless)
 2. Operating in cycle: Start and end points are the same.
 3. All heat input/output at 2 temperatures: Defined at 2 different temperature layer $T_H,T_C$.
 
-![1557921893322](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557921893322.png)
+![1559391120044](../../../../.config/Typora/typora-user-images/1559391120044.png)
 
 #### Ideal Gas Carnot Cycle
 
-![1557922053282](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557922053282.png)
+![1559391205624](../../../../.config/Typora/typora-user-images/1559391205624.png)
 
 $BC\&DA$ is a adiabatic path without any exchange of heat and quasi-static. There is $dE=dW=pdV$. We may have:
 $$
@@ -111,11 +130,11 @@ pV^\gamma=const
 $$
 There is a theorem saying that Of all engines operating only between temperature $T_H,T_C$, the Carnot engine is the most sufficient. The proof is as following.
 
-![1557922543475](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557922543475.png)
+![1559391250200](../../../../.config/Typora/typora-user-images/1559391250200.png)
 
-Suppose there is another engine better than Carnot’s. Connect is with another Carnot engine working backward between $T_H$ and $T_C$, transferring work of $W$. The input and output are as $Q_H'-Q_H$ and $Q_C'-Q_C$. According to the second law, we have $Q_H'>Q_H$, for the temperature of $T_H$ is higher. Therefore:
+Suppose there is another engine better than Carnot’s. Connect it with another Carnot engine working backward between $T_H$ and $T_C$, transferring work of $W$. The input and output are as $Q_H'-Q_H$ and $Q_C'-Q_C$. According to the second law, and no work is done to the system, we have $Q_H'>Q_H$, for the temperature of $T_H$ is higher. Therefore:
 $$
-\eta_{non-C}\frac{W}{Q_H'}\le\frac{W}{Q_H}=\eta_{C}
+\eta_{non-C}=\frac{W}{Q_H'}\le\frac{W}{Q_H}=\eta_{C}
 $$
 The efficiency of any other engine is less that or equal to the efficiency of Carnot engine.
 
@@ -129,11 +148,9 @@ We hereby give the thermal dynamic’s temperature scale.
 
 We put together 2 Carnot’s engine, doing work $W_{12},W_{23}$.
 
-![1557924474825](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557924474825.png)
+![1559391973090](../../../../.config/Typora/typora-user-images/1559391973090.png)
 
 The whole thing is equivalent to another Carnot engine, doing work $W_{13}$.
-
-![1557924558308](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557924558308.png)
 
 For engine 1:
 $$
@@ -153,7 +170,7 @@ $$
 $$
 By definition:
 $$
-1-\eta(T_1,T_2)=\frac{1-\eta(T_1,T_3)}{1-\eta(T_2,T_3)}=\frac{Q_2}{Q_1}
+\frac{Q_2}{Q_1}=1-\eta(T_1,T_2)=\frac{1-\eta(T_1,T_3)}{1-\eta(T_2,T_3)}
 $$
 The thermal dynamic scale is defined to be:
 $$
@@ -163,22 +180,25 @@ This defines the ratio, therefore still requires a reference state.
 
 For any engine:
 $$
-\eta=1-\frac{Q_C}{Q_H}\le\eta_{CE}(T_H,T_C)=1-\frac{T_C}{T_H}\Rightarrow \frac{Q_H}{T_H}+\frac{-Q_C}{T_C}\le0
+\eta=1-\frac{Q_C}{Q_H}\le\eta_{CE}(T_H,T_C)=1-\frac{T_C}{T_H}\Rightarrow \frac{Q_H}{T_H}+\frac{-Q_C}{T_C}\le0#### Clausius’ Theorem
 $$
+
+From the engine’s perspective, $-Q_C$ and $Q_H$ are the sum of heat flowing throw it, which is a system. The state of a Carnot engine as a system does not change. We may suppose that the state does change in a slight way and comes back in an instant because of the heat flowing through it. We may expand the idea of such and claim that for any system, the sum of the ratio between the heat in unit time and the corresponding temperature is strictly less than or equal to 0.
+$$
+\sum_i\frac{\delta Q_i}{T_i}\le0
+$$
+In the integral form, it is the Clausius’ theorem.
 
 #### Clausius’ Theorem
 
-For any cyclic process, 
+For any cyclic process, the heat goes into the system at a certain state $Q(s)$, there is:
 
-![1557925929084](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557925929084.png)
-
-the heat goes into the system at a certain state $Q_{(s)}$, there is:
 $$
 \oint\frac{dQ(s)}{T(s)}\le0
 $$
 which is a general case of the formula above. $Q(s)$ is the heat delivered to the system at temperature $T(s)$.
 
-![1557926658439](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557926658439.png)
+![1559389924589](../../../../.config/Typora/typora-user-images/1559389924589.png)
 
 Take a Carnot engine extracting heat from some substance with constant temperature $T_0$ and deliver the output heat to the cyclic system. When we are putting heat into the cycle, the temperature of our substance may not be the same as the temperature it holds at the heat source. Therefore, we consider this intermediate process for the convenience of describing the process of transferring heat.
 
@@ -186,11 +206,11 @@ The heat extracted from the source at a cycle is:
 $$
 \oint dQ_0(s)=\oint T_0dQ(s)/T(s)\le0\Rightarrow\oint\frac{dQ(s)}{T(s)}\le0
 $$
-for $dQ_0(s)\le0$, or we can get some heat out of some bath and set out a car.
+$dQ_0(s)\le0$, for there is certainly some work done during the process of the Carnot engine and no work is done to the system, $dW(s)>0$.
 
 #### Reversible Processes
 
-A reversible process is a process with each state equilibrium. We demand the Carnot engine to deliver the temperature precisely at each of the tiny states of the cyclic reversible process, which for each of them is equilibrium.
+A reversible process is a process with each state being equilibrium. We demand the Carnot engine to deliver the temperature precisely at each of the tiny states of the cyclic reversible process, which for each of them is equilibrium.
 
 ![1557927262192](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557927262192.png)
 
@@ -201,9 +221,9 @@ $$
 \oint\frac{dQ(s)}{T(s)}=0
 $$
 
-##### Path Independence
+#### Path Independence
 
-![1557927662483](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557927662483.png)
+![1559393853516](../../../../.config/Typora/typora-user-images/1559393853516.png)
 
 For any 2 points A and B,
 $$
@@ -211,10 +231,10 @@ $$
 $$
 The different paths of integral ultimately have the same result. An it should be the same for any other path between the 2 points. The result only depends on the initial and final state, which is the definition of entropy.
 $$
-\int_A^B\frac{dQ^{(i)}_{rev}}{T^{(i)}}=S(B)-S(A)
+\int_A^B\frac{dQ^{(i)}_{rev}}{T^{(i)}}=S(B)-S(A),dS=\frac{dQ_{rev}}{T}
 $$
 
-##### Energy
+#### Energy
 
 For a reversible transformation,
 $$
@@ -269,7 +289,7 @@ $$
 
 At constant temperature,
 $$
-dQ\ne0,dW=0
+dQ\ne0,dW=0,dT=0
 $$
 According to Clausius’ theorem,
 $$
@@ -337,17 +357,19 @@ Take derivative with respect to $\lambda$:
 $$
 \frac{dE}{d\lambda}|_{\lambda=1}=\frac{\partial E}{\partial S}|_{x,N}S+x_i\frac{\partial E}{\partial x_i}|_{S,N}+N_\alpha\frac{\partial E}{\partial N_\alpha}|_{x,S}=TS+J_ix_i+\mu_\alpha N_\alpha=E(S,x,N)
 $$
+The form of energy representation is only valid for extensive systems, in which $T$ does not change with respect to $S$, etc.
+
 Take the derivative of both sides:
 $$
 dE=TdS+SdT+J_idx_i+x_idJ_i+\mu_\alpha dN_\alpha+N_\alpha d\mu_\alpha\Rightarrow SdT+\sum_ix_idJ_i+\sum_\alpha N_\alpha d\mu_\alpha=0
 $$
-This is the Gibbs-Duhem relation. It is shown that variables $T,J_i,\mu_\alpha$ is dependent with each other by this formula.
+This is the Gibbs-Duhem relation for extensive system. It is shown that variables $T,J_i,\mu_\alpha$ is dependent with each other by this formula.
 
-#### Isothermal Condition
+#### Chemical Potential along Isothermal Term
 
 For general gas,
 $$
-dT=0,d\mu=\frac{V}{N}dp
+SdT-Vdp+Nd\mu=0\Rightarrow dT=0,d\mu=\frac{V}{N}dp
 $$
 For ideal gas:
 $$
@@ -394,6 +416,10 @@ $$
 If $x$ is a vector, or we have multiple variables here, the Hessian matrix of $H$ is positive definite.
 $$
 \sum_{i,j}\frac{\partial^2\phi}{\partial x_i\partial x_j}\delta x_i\delta x_j\ge0
+$$
+For convex potential:
+$$
+\delta x_i\delta x_i\ge0
 $$
 When the force is known:
 $$
@@ -496,5 +522,173 @@ p(x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp(-\frac{(x-\lambda)^2}{2\sigma^2})
 $$
 Characteristic function:
 $$
-\tilde p(k)=\exp(-ik\lambda-\frac{1}{2}k^2\sigma^2)\int\frac{dz}{\sqrt{2\pi\sigma^2}}\exp(-\frac{z^2}{2\sigma^2}),z=x-\lambda+ik\sigma^2
+\tilde p(k)=\exp(-ik\lambda-\frac{1}{2}k^2\sigma^2)\int\frac{dz}{\sqrt{2\pi\sigma^2}}\exp(-\frac{z^2}{2\sigma^2})=\exp(-ik\lambda-\frac{1}{2}k\sigma^2),z=x-\lambda+ik^2\sigma^2
 $$
+
+Take the logarithm:
+$$
+\ln\tilde p(k)=-ik\lambda-\frac{1}{2}k^2\sigma^2
+$$
+
+### Binary
+
+$$
+p_N(N_A)=\frac{N!}{N_A!(N-N_A)!}p_A^{N_A}p_B^{N-N_A}
+$$
+
+## Kinetic Theory of Gasses
+
+### Stirling’s Fomula
+
+- Intensive $T,p,...$ independent of $N$, $O(N)$
+- Extensive $E,V,...$, $O(N)$
+- Exponential $O(e^N)$
+
+When we are taking the sum of a series of exponentials, signifying the state of the system:
+$$
+S=\sum_{i=1}^N\epsilon_i
+$$
+where $0<\epsilon_i\sim O(e^{N\phi_i})$.
+
+Obviously:
+$$
+\ln\epsilon_{max}\le\ln S\le\ln \epsilon_{max}+\ln N
+$$
+Divide both sides by $N$:
+$$
+\frac{\ln\epsilon_{max}}{N}\le\frac{\ln S}{N}\le\frac{\ln \epsilon_{max}}{N}+\frac{\ln N}{N}
+$$
+As $N$ goes to infinity:
+$$
+\lim_{N\rightarrow\infty}\frac{\ln N}{N}=0
+$$
+To a certain extend:
+$$
+S=\epsilon_{max}
+$$
+The integral version of the summation is:
+$$
+I=\int\exp(N\phi(x)) dx\propto\exp(N\phi(x_{m}))
+$$
+Expand the term with Taylor’s series:
+$$
+\begin{align*}
+&\exp(N\phi(x))\\
+=&\exp(N\phi(x_m)-\frac{N}{2}\phi''(x_m)(x-x_m)^2)\times\exp(\frac{N}{6}\phi'''(x_m)(x-x_m)^3+O((x-x_m)^4))\\
+=&\exp(N\phi(x_m)-\frac{N}{2}\phi''(x_m)(x-x_m)^2)\times(1+\frac{N}{6}\phi'''(x_m)(x-x_m)^3+O((x-x_m)^4))
+\end{align*}
+$$
+Compute the integral:
+$$
+I=\exp(N\phi(x_m))\times\sqrt\frac{2\pi}{N\phi''(x_m)}(1+O(\frac{1}{N}))+O(\exp(N(\phi_m-\zeta)))
+$$
+The latter term is for other peaks in the graph of probability.
+
+As $N$ goes to infinity:
+$$
+\frac{\ln I}{N}=\phi(x_m)-\frac{1}{2N}\ln\frac{N\phi''(x_m)}{2\pi}+O(\frac{1}{N^2})
+$$
+By partial integral:
+$$
+N!=\int_0^\infty x^Ne^{-x}dx=\int_0^\infty\exp(N\ln x-x)dx
+$$
+$x=x_m$ is when $N\ln x-x$ takes maximum:
+$$
+x_m=N
+$$
+
+### Shannon
+
+#### Definition of Entropy
+
+Suppose we want to send the message of $N$ characters from a certain alphabet of size $M$. The number of all possible messages is:
+$$
+M^N
+$$
+The number of bits is, with the length of a bit unset:
+$$
+N\log M
+$$
+Suppose the probability of occurrence of a certain word, which is a combination of letters, in an alphabet is $p_i,1\le i\le M$. The number of the occurrence of a certain word is:
+$$
+N_i=p_iN+O(N^{\frac{1}{2}})
+$$
+Therefore, for each words, there is a discrete distribution of probability:
+
+| $i$ | $1$ | $2$ | …    | $M$ |
+| ----- | ----- | ----- | ---- | ----- |
+| $p_i$ | $p_1$ | $p_2$ | …    | $p_M$ |
+
+The number of typical messages, consisting of words, is:
+$$
+g=\frac{N!}{\prod_{i=1}^M(p_iN)!}<<M^N
+$$
+The number of bits of information for a typical message is:
+$$
+\ln g=\ln\frac{N!}{\prod_iN_i!}=N\ln N-N-\sum_i(N_i\ln N_i-N_i)=-N\sum_ip_i\ln p_i
+$$
+This is also known as the mixing entropy. We take multiple sets of balls of different colors and randomly mix them together, while. The increase in entropy is given by this mixing entropy. 
+
+By such an idea, we can define for any discrete probability $p_i$ the entropy:
+$$
+S[\{p_i\}]=-\sum_ip_i\ln p_i=-<\ln p_i>
+$$
+Same thing holds for continuous probability, with semantic and limits undefined:
+$$
+S[p(x)]=-\int p(x)\ln p(x)dx
+$$
+
+When we do not know a certain pattern, such as the existence of words, in a series of information, we consider the potential possibility of combination in the message to be $M^N$. Once we know about the existence of words, there would be increase in the knowledge (information) we currently have, represented as:
+$$
+N\ln M-(-N\sum_ip_i\ln p_i)=N(\ln M+\sum_ip_i\ln p_i)
+$$
+The information we newly gained per bit is represented as:
+$$
+I[\{p_i\}]=\ln M+\sum_ip_i\ln p_i
+$$
+
+#### Uniformed Distribution
+
+Assume that all characters in the message are equally likely to occur.
+$$
+p_i=\frac{1}{M},S=\ln M,I=\ln M+M\frac{1}{M}\ln\frac{1}{M}=0
+$$
+The uniform probability does not help at all. This is as Shannon claimed:
+
+> The unbiased arrangement of probability maximizes the entropy subject to known constraints.
+
+The uniformed probability has the largest entropy.
+
+As we do things when we compute the number of combinations in $C_m^n$, that we apply division to the combination number to apply a new constraint, we apply subtraction to entropy to apply new constraints, for entropy is the logarithm of division. The constraints are given by either equations or inequalities. Therefore, the terms signifying them can be added to the original entropy expression by Lagrangian terms.
+$$
+S[p_i]=-\sum_ip_i\ln p_i-\alpha(...)-\beta(...)
+$$
+A constraint for all kinds of distribution is that the sum of all probability is 1:
+$$
+\sum_ip_i=1
+$$
+In standard constraint form:
+$$
+f(p_i)=\sum_ip_i-1=0
+$$
+So it does not show up, but exists by itself.
+
+Another constraint to all distributions is that the expectation of the distribution of some measurement $m$ to take in the process equals some certain constant. Hence, in total account:
+$$
+S[p_i]=-\sum_ip_i\ln p_i-\alpha(\sum_ip_i-1)-\beta(\sum_iip_i-<m>)
+$$
+The measurement $m$ can be kinds of manifold, depending on the specific situation.
+
+Take the derivative:
+$$
+\frac{dS}{dp_i}=-\ln p_i-1-\alpha-\beta i
+$$
+When entropy is maximized:
+$$
+\ln p_i=-(1+\alpha)-\beta i
+$$
+
+### Gibbs Emsemble
+
+For a particular macro state, there may be lots of kinds of micro states corresponding to it. We are going to try to establish a map showing the same micro states corresponding to the same macro state. Consider $N$ copies of the same macro state $M$.
+
