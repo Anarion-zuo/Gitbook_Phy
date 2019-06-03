@@ -688,7 +688,19 @@ $$
 \ln p_i=-(1+\alpha)-\beta i
 $$
 
-### Gibbs Emsemble
+### Gibbs Ensemble
 
 For a particular macro state, there may be lots of kinds of micro states corresponding to it. We are going to try to establish a map showing the same micro states corresponding to the same macro state. Consider $N$ copies of the same macro state $M$.
+
+Suppose there is a multidimensional space with lots of points in it, signifying microstates corresponding to the same macrostate. Define ensemble density for a certain coordinate $\vec p,\vec q$:
+$$
+\rho(p,q)=\lim_{N\rightarrow\infty\\d\Gamma\rightarrow0}\frac{dN}{Nd\Gamma}
+$$
+where $dN$ is the number of points in a tiny box and $N$ is the number of all points, AKA microstates, and $d\Gamma=\prod_{i=1}^Nd^3\vec{p}_id^3\vec q_i$ is the volume of the tiny box.
+
+Try to integrate it:
+$$
+\int d\Gamma\rho(p,q)=\int\frac{dN}{N}=\frac{N}{N}=1
+$$
+The density function is a probabilistic density function.
 
