@@ -704,3 +704,42 @@ $$
 $$
 The density function is a probabilistic density function.
 
+For any function $O(p,q)$, the expectation is defined to be:
+$$
+<O(p,q)>=\int d\Gamma\rho(p,q)O(p,q)
+$$
+The Liouville’s equation governs the process of evolution of density.
+
+Suppose there is a point with coordinate $p_\alpha,q_\alpha$. Take a tiny box around it with width and height $dp_\alpha,dq_\alpha$. As time progresses to $t+dt$, the box takes a certain displacement.:
+$$
+q'_\alpha=q_\alpha+\dot q_\alpha dt+O(dt^2),p'_\alpha=p_\alpha+\dot p_\alpha dt+O(dt^2)
+$$
+The derivatives of $p,q$ are defined as:
+$$
+\frac{d\vec p_i}{dt}=-\frac{\partial H}{\partial\vec p_i}=\dot{\vec p_i},\frac{d\vec q_i}{dt}=\frac{\partial H}{\partial\vec q_i}=\dot{\vec q_i}
+$$
+The shape of the box changes accordingly.
+$$
+dq_\alpha'=dq_\alpha+\frac{\partial \dot q_\alpha}{\partial q_\alpha}dq_\alpha dt+O(...),dp'_\alpha=dp_\alpha+\frac{\partial\dot p_\alpha}{\partial p_\alpha}dp_\alpha dt+O(...)
+$$
+
+Express volume:
+$$
+dq_\alpha'dp_\alpha'=dq_\alpha p_\alpha(1+(\frac{\partial \dot q_\alpha}{\partial q_\alpha}+\frac{\partial\dot p_\alpha}{\partial p_\alpha})dt+O(dt^2,...))
+$$
+By the property of the function of state:
+$$
+\frac{\partial \dot q_\alpha}{\partial q_\alpha}+\frac{\partial\dot p_\alpha}{\partial p_\alpha}=0
+$$
+For all tiny boxed in the coordinate system:
+$$
+\prod_{\alpha}dq_\alpha dp_\alpha=\prod_\alpha dq_\alpha'dp_\alpha'\Rightarrow d\Gamma=d\Gamma'
+$$
+The density in these different boxes remains the same.
+$$
+\rho(\vec p+\dot{\vec p}dt,\vec q+\dot{\vec q}dt,t)=\rho(\vec p',\vec q',t+dt)=\rho(\vec p,\vec q,t)
+$$
+Expand the density function:
+$$
+\rho(p,q,t)=\rho(p+\dot pdt,q+\dot qdt,t+dt)=\rho(p,q,t)+[\sum_\alpha(\dot p_\alpha\frac{\partial \rho}{\partial p_\alpha}+\dot q_\alpha\frac{\partial \rho}{\partial q_\alpha})]dt+O(dt^2)\Rightarrow\sum_\alpha(\dot p_\alpha\frac{\partial \rho}{\partial p_\alpha}+\dot q_\alpha\frac{\partial \rho}{\partial q_\alpha})=0
+$$
