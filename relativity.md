@@ -147,9 +147,49 @@ When $\tau=0$, there forms a cone in the 4D space, called the light cone. Every 
 
 The vector in 4D space is written as:
 $$
-X^\mu=(X^0,X^1,X^2,X^3)\sim(t,x,y,z)
+X^\mu=(X^0,X^1,X^2,X^3)=(t,x,y,z)=(t,\vec x)
 $$
-And define the 4D velocity:
+Specially, the notation $\mu$ is between 0 and 3, indicating a 4D case, while changing it by $i\in[1,3]$ indicates a 3D case.
+
+3D velocity:
 $$
-U^\mu=\frac{dX^\mu}{d\tau},d\tau^2=dt^2-dx^2-dy^2-dz^2
+\vec v=\frac{d\vec x}{dt}
 $$
+Define the 4D velocity:
+$$
+u^\mu=\frac{dX^\mu}{d\tau},d\tau^2=dt^2-dx^2-dy^2-dz^2
+$$
+
+The relation between the 3D and 4D velocity is:
+$$
+v^i=\frac{dx^i}{d\tau}\frac{d\tau}{dt}=u^i\frac{d\tau}{dt}
+$$
+where $d\tau$ can be expressed by:
+$$
+d\tau=dt\sqrt{1-\frac{d\vec x^2}{dt^2}}=dt\sqrt{1-\vec v^2}
+$$
+Therefore, the term $\sqrt{1-v^2}$ is the change in proper time with respect to classic time.
+
+We also define:
+$$
+u^o=\frac{dt}{d\tau}=\frac{1}{\sqrt{1-v^2}}
+$$
+Under a low-speed case, we treat $U^i$ and $t$ to be the same.
+
+In general:
+$$
+u^0=\frac{1}{\sqrt{1-v^2}},u^i=\frac{v^i}{\sqrt{1-v^2}}
+$$
+There is a relation between these components of $U$:
+$$
+{u^0}^2-\vec u^2=1
+$$
+The difference of the square of the time and space component of the velocity. Therefore, space and time are not made up of 4 independent components.
+
+### Cast Classic
+
+When observing along a world line in the 4D space, we need something’s integral that does not change according to the reference frame. A good guess is the proper time.
+$$
+\sum\delta\tau=C
+$$
+For example, the distance between 2 points in a 2D plane is independent of the rotation of the coordinate system.
