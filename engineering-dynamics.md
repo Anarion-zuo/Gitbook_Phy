@@ -450,6 +450,73 @@ $$
 I_{zz/A}=I_{zz/G}+Md^2
 $$
 
+## Lagrangian
+
+### Definition
+
+$$
+L=T-V
+$$
+
+The difference between kinetic energy and potential energy.
+
+$q_j$ for generalized coordinates and $Q_j$ for generalized forces. There is:
+$$
+\frac{d}{dt}(\frac{\partial L}{\partial\dot q_j})-\frac{\partial L}{\partial q_j}=Q_j
+$$
+Or in detailed form:
+$$
+\frac{d}{dt}\frac{\partial T}{\partial\dot q_j}-\frac{d}{dt}\frac{\partial V}{\partial\dot q_j}-\frac{\partial T}{\partial q_j}+\frac{\partial V}{\partial q_j}=Q_j
+$$
+For mechanical systems, potential energy is independent of velocity, therefore the equation becomes:
+$$
+\frac{d}{dt}\frac{\partial T}{\partial\dot q_j}-\frac{\partial T}{\partial q_j}+\frac{\partial V}{\partial q_j}=Q_j
+$$
+We number the terms accordingly from left to the right side, 1, 2, 3, and 4. We compute 1, 2, 3, 4 for $j$ times and get our solution.
+
+### Generalized Coordinates
+
+1. Does not have to be Cartesian
+2. Not even inertial
+3. Must be independent and complete
+   1. Independent: when you fix all but one coordinate, it still has a continuous range of movement in the free coordinate.
+   2. Complete: capable of locating all parts of the system at all times.
+4. System must be holonomic
+   1. The number of coordinates equals the number of degrees of freedom.
+
+#### Double Perdulum
+
+![1560333166128](assets/1560333166128.png)
+
+#### Systematic Approach
+
+1. Determine the number of degrees of freedom. Choose coordinates $q_j$.
+2. Verify complete independent holonomic …
+3. Compute $T,V$.
+4. Compute 1, 2, 3 for each $q_i$.
+5. For each $q_j$, find $Q_j$ that goes with it.
+6. Computing the virtual work $\delta W^{NC}$ associated with the virtual displacement $\delta q_j$. $\delta W_j=Q_j\delta q_j$. NC for none conservative.
+
+![1560342145546](assets/1560342145546.png)
+
+Compute derivatives:
+$$
+\frac{d}{dt}\frac{\partial 1/2M\dot x^2}{\partial\dot x}=\frac{dM\dot x}{dt}=M\ddot x,-\frac{\partial T}{\partial x}=0,\frac{\partial T}{\partial x}=0,\frac{\partial V}{\partial x}=Kx-Mg
+$$
+Compute right-hand-side:
+$$
+\sum F_idR\cdot(\delta q_j)=(F(t)i-b\dot xi)\cdot\delta xi=Q_x\delta x\Rightarrow Q_x=F(t)-b\dot x
+$$
+
+
+
+
+
+
+
+
+
+
 ## Vibration
 
 ### Single Degree Freedom System

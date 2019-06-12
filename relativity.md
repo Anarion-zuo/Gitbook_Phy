@@ -190,6 +190,15 @@ The difference of the square of the time and space component of the velocity. Th
 
 When observing along a world line in the 4D space, we need something’s integral that does not change according to the reference frame. A good guess is the proper time.
 $$
-\sum\delta\tau=C
+\sum\delta\tau=Action
 $$
 For example, the distance between 2 points in a 2D plane is independent of the rotation of the coordinate system.
+
+Multiplying a number and relation holds.
+$$
+-m\sum\delta\tau=Action
+$$
+Express it:
+$$
+\int\sqrt{dt^2-dx^2}=\int\sqrt{1-\vec v^2}dt
+$$
