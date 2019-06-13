@@ -411,44 +411,86 @@ H_{/A}=I_{xz}w_z\hat i+I_{yz}w_z\hat j+I_{zz}w_z\hat k
 $$
 The off diagonal angular momentum terms results in a unbalanced system. 
 
-### Rigid
+### Moment of Inertial
 
-1. Consider bodies that rotate about center of mass on fixed points.
+1. Consider bodies that rotate about the center of mass or fixed points.
 2. Use reference frames attached to bodies.
 
-![1557714244186](C:\Users\a\AppData\Roaming\Typora\typora-user-images\1557714244186.png)
+Suppose there is a rigid body with a frame system attached to it with origin at $A$. Suppose there is a litter has $m_i$ at position $R_{i/A}$ with respect to $A$. The body is rotating with respect to $A$. Its angular momentum is expressed as:
+$$
+h_{i/A}=R_{i/A}\times P_{i/O}
+$$
+![1560415920374](assets/1560415920374.png)
 
-For a single point of mass:
+Suppose the position is no component in $y$. The angular momentum of the mass point is:
 $$
-h_{i/A}=R_{i/A}\times P_{i/O}=(x_i\hat i+z_i\hat k)\times m_ix_iw_z\hat j=m_ix_i^2w_z\hat k-m_ix_iz_iw_z\hat i\\
-\frac{d}{dt}h_{i/A}=\tau
+h_{i/A}=R_{i/A}\times P_{i/O}=(x_i\hat i+z_i\hat k)\times m_ix_iw_z\hat j=m_ix_i^2w_z\hat k-m_ix_iz_iw_z\hat i=h_z+h_x
 $$
-For a whole body:
+Define torque:
 $$
-H_{/A}=\sum_iR_{i/A}\times P_{i/A}=\sum_im_iR_{i/A}\times(w_{/O}\times R_{i/A})
+\frac{d}{dt}h_{i/A}=\tau^{rot}
 $$
-For the inertial matrixL
+Evolve the idea to rigid bodies:
 $$
-I_{xz}=-\sum_im_ix_iz_i,I_{zz}=\sum_im_i(x_i^2+y_i^2)
+H_{/A}=\sum_iR_{i/A}\times P_{i/O}=\sum_im_iR_{i/A}\times(w_{/O}\times R_{i/A})
+$$
+In general, we get:
+$$
+H_{/A}=H_x\hat i+H_y\hat j+H_z\hat k
+$$
+For each components, we have:
+$$
+H_x=I_{xx}w_x+I_{xy}w_y+I_{xz}w_z
 $$
 In general:
 $$
-I_{\alpha\beta}=(-1)^{I(\alpha=\beta)+1}\sum_im_i\alpha_i\beta_i
+\begin{pmatrix}
+H_x\\H_y\\H_z
+\end{pmatrix}=\begin{pmatrix}
+I_{xx}&-I_{xy}&-I_{xz}\\
+-I_{yx}&I_{yy}&-I_{yz}\\
+-I_{zx}&-I_{zy}&I_{zz}
+\end{pmatrix}\begin{pmatrix}
+w_x\\w_y\\w_z
+\end{pmatrix}
 $$
-For every rigid body, we can find a set of coordinate at a certain point such that the inertial matrix is diagonal. When we rotate the body accordingly, the body would rotate in balanced state, having no components of angular momentum outside the rotating axis. The axis is the principal axis.
-
-1. If there is an axis of symmetry, the axis is a principal axis.
-2. If there is 1 plane of symmetry, there is a principal axis perpendicular to it. It may pass the center of mass $G$, but not only be it.
-3. If there is 2 orthogonal planes of symmetry, their intersection is a principal axis.
-
-The axis we find may not cross the center of mass, for dynamical balance is not statical balance. The definition of dynamical balance of a rigid body is that there is no torque generated in the perpendicular direction of the rotating axis while rotating at any time, any rate, while it may have a unbalanced centripetal force.
-
-### Not the Center of Mass
-
-Parallel axis:
+There is negative signs on the non-diagonal entries. The entries can be computed in such way as:
 $$
-I_{zz/A}=I_{zz/G}+Md^2
+I_{xy}=\sum_im_ix_iy_i
 $$
+Notice that this is a symmetric matrix, with each entity on the diagonal to have the form of something squared. The square is simply the distance squared between the mass point and the coordinate axis.
+
+### Principal Axis
+
+A principal axis is an axis rotation around which does not have out-of-axis angular momentum. The mathematical approach to the problem is eigen-separation and make the inertial matrix diagonal and orthogonal. There are also intuitive ways to find principal axis.
+
+1. Axis of symmetry: there is always a mirror point of all points. The axis is a principal axis.
+2. Plane of symmetry: there is always a mirror point of all points. A principal axis must be perpendicular to the plane. It may pass through the center of mass. When it does not pass through the center of mass, there is going to be a centripetal force caused by the rotation, while it does not violate the definition of principal axis. The dynamic balancing of a body requires there should not be torque components on the principal axis. The static balancing of a body requires no torque at all.
+3. If there are 2 orthogonal planes of symmetry, their intersection is a principal axis.
+
+Parallel axis theorem:
+$$
+I_{/A}=I_{/G}+Md^2
+$$
+
+### Fundamental Laws
+
+$$
+\sum F^{ext}=\frac{dP_{/O}}{dt},\sum\tau^{ext}=\frac{dH_{/A}}{dt}+v_{A/O}\times P_{/O}
+$$
+
+1. Pure rotation about a fixed axis through the center of mass.
+2. Pure rotation about fixed axis not at the center of mass.
+3. No external constraints.
+4. Bodies with moving points of constraints.
+
+
+
+
+
+
+
+
 
 ## Lagrangian
 

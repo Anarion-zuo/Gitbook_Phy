@@ -133,7 +133,7 @@ $$
 w=\frac{u+v}{1+uv},x''=\frac{x-wt}{\sqrt{1-w^2}}
 $$
 
-### 3D Case
+### 3D to 4D
 
 Put back the $y$ axis and the $z$ axis.
 
@@ -186,7 +186,7 @@ $$
 $$
 The difference of the square of the time and space component of the velocity. Therefore, space and time are not made up of 4 independent components.
 
-### Cast Classic
+### Particles
 
 When observing along a world line in the 4D space, we need something’s integral that does not change according to the reference frame. A good guess is the proper time.
 $$
@@ -202,3 +202,71 @@ Express it:
 $$
 \int\sqrt{dt^2-dx^2}=\int\sqrt{1-\vec v^2}dt
 $$
+
+#### Lagrangian
+
+The action of an object is the integral of something with respect to time. Hence, we can define a Lagrangian:
+$$
+L=-m\sqrt{1-\dot x^2-\dot y^2-\dot z^2}=-m\sqrt{1-v^2}
+$$
+The Lagrangian of the Lagrangian is:
+$$
+L_L=\frac{1}{2}m(\dot x^2+\dot y^2+\dot z^2)
+$$
+Plug in definition of momentum:
+$$
+p_x=\frac{\partial L}{\partial \dot x}=\frac{m\dot x}{\sqrt{1-v^2}}=\frac{mv_x}{\sqrt{1-v^2}}=mu^x
+$$
+Likewise:
+$$
+mu^i=p^i
+$$
+The $m$ can be called “rest mass” or energy at rest.
+
+Hamiltonian:
+$$
+H=\sum_i\dot x_ip^i-L=\sum_i\frac{m\dot x_i^2}{\sqrt{1-v^2}}+m\sqrt{1-v^2}=\frac{m}{\sqrt{1-v^2}}=mu^0
+$$
+We can thus expand the definition of momentum:
+$$
+p^\mu=mu^\mu
+$$
+
+#### $p^0$
+
+This is energy:
+$$
+p^0=\frac{mc^2}{\sqrt{1-v^2/c^2}}
+$$
+Apply Taylor’s expansion:
+$$
+\frac{m}{\sqrt{1-v^2}}=m+\frac{mv^2}{2}+O(v^4)
+$$
+When changed into the classic scale:
+$$
+E=mc^2+E_k(v)
+$$
+The energy at rest is $mc^2$.
+
+Plug into the relation between the 4 components:
+$$
+m^2{u^0}^2-m^2\vec u^2=m^2\Rightarrow E^2-p^2=m^2,E^2=p^2+m^2
+$$
+In classic scale:
+$$
+E=\sqrt{p^2c^2+m^2c^4}
+$$
+As “mass” goes to 0:
+$$
+E=c|p|
+$$
+
+#### Compute Photon Momentum
+
+Suppose some particle decays into 2 photons, flying in opposite direction.
+$$
+mc^2=2c|p|,|p|=\frac{1}{2}mc
+$$
+
+### Field
+
