@@ -723,6 +723,8 @@ $$
 dq_\alpha'=dq_\alpha+\frac{\partial \dot q_\alpha}{\partial q_\alpha}dq_\alpha dt+O(...),dp'_\alpha=dp_\alpha+\frac{\partial\dot p_\alpha}{\partial p_\alpha}dp_\alpha dt+O(...)
 $$
 
+where $H$ is the Hamiltonian of the system. The Hamiltonian is the sum of the kinetic energies of all the particles, plus the potential energy of the particles associated with the system.
+
 Express volume:
 $$
 dq_\alpha'dp_\alpha'=dq_\alpha p_\alpha(1+(\frac{\partial \dot q_\alpha}{\partial q_\alpha}+\frac{\partial\dot p_\alpha}{\partial p_\alpha})dt+O(dt^2,...))
@@ -735,7 +737,7 @@ For all tiny boxed in the coordinate system:
 $$
 \prod_{\alpha}dq_\alpha dp_\alpha=\prod_\alpha dq_\alpha'dp_\alpha'\Rightarrow d\Gamma=d\Gamma'
 $$
-The density in these different boxes remains the same.
+The density in these different boxes remains the same. This is called the incompressibility condition.
 $$
 \rho(\vec p+\dot{\vec p}dt,\vec q+\dot{\vec q}dt,t)=\rho(\vec p',\vec q',t+dt)=\rho(\vec p,\vec q,t)
 $$
@@ -743,3 +745,46 @@ Expand the density function:
 $$
 \rho(p,q,t)=\rho(p+\dot pdt,q+\dot qdt,t+dt)=\rho(p,q,t)+[\sum_\alpha(\dot p_\alpha\frac{\partial \rho}{\partial p_\alpha}+\dot q_\alpha\frac{\partial \rho}{\partial q_\alpha})]dt+O(dt^2)\Rightarrow\sum_\alpha(\dot p_\alpha\frac{\partial \rho}{\partial p_\alpha}+\dot q_\alpha\frac{\partial \rho}{\partial q_\alpha})=0
 $$
+
+In order to define a incompressibility for a system, one may define a function $f$ , describing the system.
+$$
+\frac{d}{dt}f(p,q,t)=\frac{\partial f}{\partial t}+\sum_\alpha(\frac{\partial f}{\partial p_\alpha}\dot p_\alpha+\frac{\partial f}{\partial q_\alpha}\dot q_\alpha)
+$$
+For the density of the system:
+$$
+\frac{d\rho}{dt}=\frac{\partial\rho}{\partial t}+\sum_\alpha\frac{\partial\rho}{\partial p_\alpha}((-\frac{\partial H}{\partial q_\alpha})+\frac{\partial\rho}{\partial q_\alpha}(\frac{\partial H}{\partial p_\alpha}))
+$$
+We write the equation in a new notation:
+$$
+\frac{\partial\rho}{\partial t}=\{H,\rho\}
+$$
+where this is defined as the Poison Bracket:
+$$
+\{A,B\}=\sum_\alpha(\frac{\partial A}{\partial q_\alpha}\frac{\partial B}{\partial p_\alpha}-\frac{\partial A}{\partial p_\alpha}\frac{\partial B}{\partial q_\alpha})
+$$
+for all components of $p,q$ upon $\alpha$s. Obviously:
+$$
+\{A,B\}=\{B,A\}
+$$
+Go back to the expectation of some function $O(p,q)$, where $O$ may be a summation of components:
+$$
+O(p,q)=\frac{1}{N}\sum_\alpha O_\alpha(p_\alpha,q_\alpha,t)
+$$
+ As we put time into consideration, we may have:
+$$
+<O(p,q)>_t=\int d\Gamma\rho(p,q,t)O(p,q)
+$$
+Take the derivative:
+$$
+\frac{d}{dt}<O(p,q)>_t=\int d\Gamma\frac{\partial\rho}{\partial t}O(p,q)=\int d\Gamma\{H,\rho\}O(p,q)
+$$
+Write this explicitly:
+$$
+\frac{d}{dt}<O(p,q)>_t=\int(\prod_idp^3dq^3)\sum_\alpha(\frac{\partial A}{\partial q_\alpha}\frac{\partial B}{\partial p_\alpha}-\frac{\partial A}{\partial p_\alpha}\frac{\partial B}{\partial q_\alpha})O
+$$
+We can apply integration by part to this expression.
+$$
+\frac{d}{dt}<O(p,q)>_t=-<\{H,O\}>
+$$
+
+
