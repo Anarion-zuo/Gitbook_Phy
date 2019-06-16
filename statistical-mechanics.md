@@ -764,7 +764,7 @@ $$
 $$
 for all components of $p,q$ upon $\alpha$s. Obviously:
 $$
-\{A,B\}=\{B,A\}
+\{A,B\}=-\{B,A\}
 $$
 Go back to the expectation of some function $O(p,q)$, where $O$ may be a summation of components:
 $$
@@ -787,4 +787,8 @@ $$
 \frac{d}{dt}<O(p,q)>_t=-<\{H,O\}>
 $$
 
-
+The equilibrium state is defined to be that density does not change according to time. That is:
+$$
+\frac{\partial\rho}{\partial t}=0=\{H,\rho\}
+$$
+To insure this, we can make the density of the system to be a direct function of its Hamiltonian, $\rho(H)$.

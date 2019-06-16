@@ -456,7 +456,7 @@ w_x\\w_y\\w_z
 $$
 There is negative signs on the non-diagonal entries. The entries can be computed in such way as:
 $$
-I_{xy}=\sum_im_ix_iy_i
+I_{xy}=\sum_im_ix_iy_i,x_i^2+y_i^2=z_i^2
 $$
 Notice that this is a symmetric matrix, with each entity on the diagonal to have the form of something squared. The square is simply the distance squared between the mass point and the coordinate axis.
 
@@ -500,7 +500,7 @@ A force acting on a rigid body can be considered as the force acting toward the 
 
 There is an explicit relation between the angular momentum with respect to some point and to the center of mass.
 $$
-H_{/A}=R_{G/A}\times P_{/O}+H_{/G}
+H_{/A}=R_{G/A}\times P_{G/O}+H_{/G}
 $$
 
 
