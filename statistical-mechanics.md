@@ -792,3 +792,34 @@ $$
 \frac{\partial\rho}{\partial t}=0=\{H,\rho\}
 $$
 To insure this, we can make the density of the system to be a direct function of its Hamiltonian, $\rho(H)$.
+
+One of the applications of the density function is that we may look at the density for only one particle.
+$$
+\begin{align*}
+&f_1(\vec p,\vec q,t)\\
+=&<\sum_{i=1}^N\delta^3(\vec q_i-\vec q)\delta^3(\vec p_i-\vec p)>\\
+=&N\int\prod_{i=2}^Nd^3p_id^3q_i\rho(\vec p_1=\vec p,\vec q_1=\vec q,\vec p_2,\vec q_2...,\vec p_N,\vec q_N,t)\\
+=&N\rho_1(\vec p_1-\vec p,\vec q_1-\vec q,t)
+\end{align*}
+$$
+The one particle density is defined to be this. Namely, it integrate through all other particles except the one we are interested at $(\vec p, \vec q)$. Similarly, we can also define the 2 or more particle density.
+$$
+\begin{align*}
+&f_2(\vec p_1,\vec q_1,\vec p_2,\vec q_2,t)\\
+=&N(N-1)\int\prod_{i=3}^NdV_i\rho_N(\vec p_1,...,\vec q_N,t)\\
+=&N(N-1)\rho_2(\vec p_1,\vec q_1,\vec p_2,\vec q_2,t)
+\end{align*}
+$$
+And more:
+$$
+f_s(\vec p_1,\vec q_s,t)=\frac{N!}{(N-s)!}\rho_s(\vec p_1,...,\vec q_s,t)
+$$
+For the Hamiltonian in the system, we consider the single particles, pairs of particles , and more.
+$$
+H=\sum_i(\frac{P_i^2}{2m_i}+U(\vec q_i))+\frac{1}{2}\sum_{i\ne j}U(\vec q_i-\vec q_j)+...
+$$
+This is used when computing the derivative of $s$-particle density with respect to time.
+$$
+\frac{\partial f_s}{\partial t}=\frac{N!}{(N-s)!}\int\prod_{i=s+1}^NdV_i\frac{\partial\rho}{\partial t}
+$$
+The Hamiltonian can be separated into 3 parts.
